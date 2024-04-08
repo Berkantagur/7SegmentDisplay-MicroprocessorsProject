@@ -111,6 +111,8 @@ DELAY ENDP
 CODE ENDS
 END START
 ```
+![undefined - Imgur](https://github.com/Berkantagur/CEN212-Microprocessors-Project/assets/113332304/8c0672ce-d1d0-40b3-805f-784d3c0da857)
+![undefined - Imgur (1)](https://github.com/Berkantagur/CEN212-Microprocessors-Project/assets/113332304/616fe301-be07-4bc1-961e-f4b4464e294a)
 
 </details>
 <details>
