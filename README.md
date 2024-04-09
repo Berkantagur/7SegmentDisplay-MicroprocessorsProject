@@ -110,7 +110,7 @@ END START
 ![emu8086_rz68okf92d](https://github.com/Berkantagur/CEN212-Microprocessors-Project/assets/113332304/9656bab1-722c-4fe4-ad37-b5eb95dcfb67)
 ![emu8086_fNzSCH8xDM](https://github.com/Berkantagur/CEN212-Microprocessors-Project/assets/113332304/f0d3af14-35d6-47a7-ba5b-29ae08077740)
 
-  We looked at what we could do by going further and found an emulation kit that could work on emu8086. Here we set up the indicator and wrote code from scratch according to the port numbers. 
+  We looked at what we could do by going further and found an emulation kit that could work on emu8086. Here we set up the display and wrote code from scratch according to the port numbers. 
   ```
 ASSUME CS:CODE, DS:DATA
 
