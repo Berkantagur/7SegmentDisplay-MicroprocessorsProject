@@ -16,6 +16,7 @@ This project aims to provide a basic digital watch structure as well as an enhan
 - 7 Segment Display
 - Emulator (emu8086)
 - Simulation Environment (Proteus)
+- Emulation Kit
 
 **Note:** *The relevant equipment to be used in the project will be provided in a virtual environment via Proteus (Microprocessor - 7 Segment Display).*
 
