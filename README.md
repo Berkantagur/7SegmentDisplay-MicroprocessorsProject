@@ -112,4 +112,6 @@ END START
 </details>
 <details>
   <summary>Compilation and Testing</summary>
+  ![7SegmentDisplayGif](https://github.com/Berkantagur/CEN212-Microprocessors-Project/assets/113332304/daa24aec-27c2-461e-a378-28f6b6a2f030)
+
 </details>
