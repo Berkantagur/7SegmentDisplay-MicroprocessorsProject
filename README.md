@@ -110,19 +110,6 @@ END START
 ![emu8086_rz68okf92d](https://github.com/Berkantagur/CEN212-Microprocessors-Project/assets/113332304/9656bab1-722c-4fe4-ad37-b5eb95dcfb67)
 ![emu8086_fNzSCH8xDM](https://github.com/Berkantagur/CEN212-Microprocessors-Project/assets/113332304/f0d3af14-35d6-47a7-ba5b-29ae08077740)
 
-</details>
-<details>
-  <summary>Compilation and Testing</summary>
-  When we run our code on emu8086, our clock counts according to the 100 millisecond delay time we initially referenced. We did not use the IN command because we did not have a physical circuit. Instead, the user can change the values by double-clicking the desired part on the screen to enter the values and continue counting from the desired location. The best logic here was to switch to the new day when the clock was 23.59.59.59 and the counter started counting from the new day as 00.00.00.00 as if the programme was energised.
-  <br>
-  ![7SegmentDisplayGif](https://github.com/Berkantagur/CEN212-Microprocessors-Project/assets/113332304/508cd21b-440d-420c-978b-00d98db4ad55)
-  <br>
-  Although the project result we wanted was not fully met, we achieved our goal over 85%. Because we have a programme that shows the hour, minute and second values and allows us to set it as we want when we want and then continue from where it left off. But we were not satisfied with what we had, we did countless research on how to visualise it more beatiful. Through the demo version of Proteus software, we designed what it would look like if we had a physical circuit.
-  <br>
-  ![7SegmentDisplayCircuit](https://github.com/Berkantagur/CEN212-Microprocessors-Project/assets/113332304/1ac64029-0fa5-45f0-9984-32f9b685f447)
-  <br>
-  If we had the physical facilities, we would love to show you this, but this is all we could do based on our research.
-
   We looked at what we could do by going further and found an emulation kit that could work on emu8086. Here we set up the indicator and wrote code from scratch according to the port numbers. 
   ```
 ASSUME CS:CODE, DS:DATA
@@ -298,6 +285,20 @@ END START
 ![7SegmentDisplay](https://github.com/Berkantagur/CEN212-Microprocessors-Project/assets/113332304/2b30e7da-94a8-4619-91cd-b0ce1e9f3a1d)
 
 The visual clock in our code is given above. Initially starting from zero, the indicator is continuously updated. 
+
+</details>
+<details>
+  <summary>Compilation and Testing</summary>
+  When we run our code on emu8086, our clock counts according to the 100 millisecond delay time we initially referenced. We did not use the IN command because we did not have a physical circuit. Instead, the user can change the values by double-clicking the desired part on the screen to enter the values and continue counting from the desired location. The best logic here was to switch to the new day when the clock was 23.59.59.59 and the counter started counting from the new day as 00.00.00.00 as if the programme was energised.
+  <br>
+  ![7SegmentDisplayGif](https://github.com/Berkantagur/CEN212-Microprocessors-Project/assets/113332304/508cd21b-440d-420c-978b-00d98db4ad55)
+  <br>
+  Although the project result we wanted was not fully met, we achieved our goal over 85%. Because we have a programme that shows the hour, minute and second values and allows us to set it as we want when we want and then continue from where it left off. But we were not satisfied with what we had, we did countless research on how to visualise it more beatiful. Through the demo version of Proteus software, we designed what it would look like if we had a physical circuit.
+  <br>
+  ![7SegmentDisplayCircuit](https://github.com/Berkantagur/CEN212-Microprocessors-Project/assets/113332304/1ac64029-0fa5-45f0-9984-32f9b685f447)
+  <br>
+  If we had the physical facilities, we would love to show you this, but this is all we could do based on our research.
+
 </details>
 
 ### ♾️Conclision
