@@ -1,6 +1,6 @@
 # CEN212 Microprocessors Project
-## 📍Time Display with 7 Segment Indicator
-### Project Description and Purpose
+## ⏳Time Display with 7 Segment Indicator
+### 📍Project Description and Purpose
 <p>
 This project aims to create a digital clock using a 7 segment display. When the microprocessor is energised, 00:00:00 will be displayed as the start time. Then, using delay functions, the hour, minute and second values will be updated in real time. The user will be able to set the time using the hour select, minute select, increment and decrement keys. The seconds value will be reset automatically when the time is set.
 
@@ -11,7 +11,7 @@ This project aims to provide a basic digital watch structure as well as an enhan
 **Note:** *The programme is written in assembly code and the code is planned to run only on 8086.*
 </p>
 
-### Equipment List and Requirements
+### 🔧Equipment List and Requirements
 - Microprocessor (8086)
 - 7 Segment Display
 - Emulator (emu8086)
@@ -19,7 +19,7 @@ This project aims to provide a basic digital watch structure as well as an enhan
 
 **Note:** *The relevant equipment to be used in the project will be provided in a virtual environment via Proteus (Microprocessor - 7 Segment Display).*
 
-### Project Construction
+### 📜Project Construction
 In this section, we will explain step by step how we built our project. Firstly, we created the project plan and then we proceeded by writing assembly codes on the emu8086 simulator according to our needs. We developed various solutions according to whether our needs were met or not and integrated our digital clock to work in harmony with our code. Finally, we completed our project by performing various tests.
 
 **Note:** *You can access the details by clicking on the relevant project stages from the drop-down menu.*
@@ -123,3 +123,12 @@ END START
   If we had the physical facilities, we would love to show you this, but this is all we could do based on our research.
 
 </details>
+
+### ♾️Conclision
+At the end of the project, we gained many more valuable things besides completing the task given to us. We experienced many things, such as how to work in a team, cooperation, task sharing. We had the opportunity to develop our project management and research skills that we will use in our future lives. We would like to thank our esteemed teacher Assoc. Prof. Dr. Mustafa Berkan BİÇER for his contributions to us as soft skills acquisition.
+
+### 🤖Contributors
+- 2022555056 Asusena Ela ÖZTÜRK
+- 2021555001 Berkant AĞUR
+- 2022555035 Emre KAHRAMAN
+- 2021555503 Tuğçe ÇALIŞOĞLU
