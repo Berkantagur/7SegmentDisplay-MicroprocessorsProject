@@ -52,67 +52,62 @@ START:
     MOV AX, DATA
     MOV DS, AX
 ```
-At the start of the programme, the hour, minute and second values are initialised as 00.00.00.00. For this, the value 00 is loaded into the AX register first. Then it is loaded to hour, minute and second variables via AX.
+At the start of the programme, the hour, minute and second values are initialised as 00.00.00.00. For this, the value 00 is loaded loaded to hour, minute and second variables.
 ```
-    MOV AX, 00
-    MOV [hour], AX
-    MOV [minutes], AX
-    MOV [seconds], AX
+    MOV hour, 00
+    MOV minutes, 00
+    MOV seconds, 00 
 ```
-To update the hour, minute and second values in an infinite loop, the value 1000 is loaded into the CX register first. This is the reference in milliseconds for a delay of 1 second. Then the value 60 is loaded into the DX register. This is a reference of 60 seconds for 1 minute. After the related loads are done, the loop named HOUR_LOOP is jumped to update the clock value.
+To update the hour, minute and second values in an infinite loop, an infinite loop named MAIN_LOOP is used. Here the procedure called DelayOneSecond is called with the CALL command. This is used for the delay in milliseconds for a delay of 1 second. Then the value 60 is loaded into the DX register. This is a reference in 60 seconds for 1 minute. It is also a 60-minute reference for 1 hour. 
 ```
-    MOV CX, 1000
-    MOV DX, 60  
-    JMP HOUR_LOOP
+MAIN_LOOP:
+    CALL DelayOneSecond
+    MOV DX, 60
 ```
-In the clock cycle, the second value is increased by 1 by 1 with the help of the INC instruction and when it reaches 60, the second value is compared with the value in the DX register (whether it is equal to 60 or not) with the help of the CMP instruction. If it is not equal, a jump is made to the MINUTES_UPDATE tag with the JNE instruction (to continue counting these seconds and return to the beginning). If it is equal, the minute is increased by 1 and the second value is reset to 00.
+After the relevant uploads are made, the seconds is increased. The seconds variable is loaded into the AX register and then the values in the AX and DX registers are compared with the CMP instruction. If these two values are not equal to each other, JNE instruction is used to go back to the beginning (to increase the second continuously) with UPDATE_DISPLAY.
 ```
-HOUR_LOOP:
-    INC [seconds]
-    CMP [seconds], DX
-    JNE MINUTES_UPDATE
-
-    INC [minutes]
-    MOV [seconds], 00
+INC seconds
+MOV AX, seconds
+CMP AX, DX
+JNE UPDATE_DISPLAY
 ```
-When the minute value is 60, control is provided to increase the hour value. With the CMP instruction, the 60 value in the DX register and the minute value are compared. If the minute value is still not 60, there is no need to update the clock value and return directly to the loop. (For this, go to the HOUR_UPDATE loop.) If it is equal, the clock value is increased by 1 with the INC instruction and the minute variable is reset to 00 with the MOV instruction.
+If the values in the AX and DX registers are equal (60), the seconds variable is reset to zero and the minutes variable is incremented by one. Then minute value is assigned to AX variable and AX - DX comparison is done again with CMP. This is to update the clock value if the minute value is equal to 60. If these two values are not equal to each other, JNE instruction is used to go back to the beginning with UPDATE_DISPLAY.
 ```
-MINUTES_UPDATE:
-    CMP [minutes], DX
-    JNE HOUR_UPDATE
-
-    INC [hour]
-    MOV [minutes], 00
+MOV seconds, 00
+INC minutes
+MOV AX, minutes
+CMP AX, DX
+JNE UPDATE_DISPLAY
 ```
-To update the indicator, the INDICATOR_UPDATE procedure is called with the CALL command. This procedure updates the indicator according to the current clock value. The value 1000 is then loaded into the CX register to provide a one second delay, which is the number of milliseconds in 1 second. The CALL DELAY command calls the DELAY procedure to provide a 1 second delay. JMP HOUR_LOOP jumps to the loop at the beginning of the programme. This allows the unequal values controlled by the JNE instructions to be incremented. In other words, it allows the programme to count continuously and update the hour, minute and second values.
+If the minute value is equal to 60, to update the clock value, the values in the minute and second variables are reset by assigning zero with the MOV instruction and the clock is incremented by one with the INC instruction. Then the clock value is assigned to the AX register and 24 is compared with the clock value in the AX register with the CMP instruction. If these two values are not equal to each other, JNE instruction is used to go back to the beginning with UPDATE_DISPLAY.
 ```
-HOUR_UPDATE:
-    CALL INDICATOR_UPDATE
-
-    MOV CX, 1000
-    CALL DELAY
-
-    JMP HOUR_LOOP
+MOV minutes, 00
+INC hour
+MOV AX, hour
+CMP AX, 24
+JNE UPDATE_DISPLAY
 ```
-INDICATOR_UPDATE PROC starts a procedure called INDICATOR_UPDATE to update the indicator. The RET command is used at the end of the procedure to return to the original call point after execution.
+If the time is equal to 24, the clock value is reset to zero to move to the next day.
 ```
-INDICATOR_UPDATE PROC
-    RET
-INDICATOR_UPDATE ENDP
+MOV hour, 00
 ```
-The DELAY procedure shall not take any action to provide a delay of one second. Normally there are several methods to provide a one second delay. In this programme we wanted to provide this by leaving the procedure empty.
+The JMP command jumps to MAIN_LOOP, which ensures continuous time updating. 
 ```
-DELAY PROC
-    RET
-DELAY ENDP
+UPDATE_DISPLAY:
+    JMP MAIN_LOOP
 ```
-
+The DelayOneSecond procedure shall not take any action to provide a delay of one second. Normally there are several methods to provide a one second delay. In this programme we wanted to provide this by leaving the procedure empty.
+```
+DelayOneSecond:
+;1 seconds delay = 100 milliseconds(ms)
+RET
+```
 ```
 CODE ENDS
 END START
 ```
-![undefined - Imgur](https://github.com/Berkantagur/CEN212-Microprocessors-Project/assets/113332304/8c0672ce-d1d0-40b3-805f-784d3c0da857)
-![undefined - Imgur (1)](https://github.com/Berkantagur/CEN212-Microprocessors-Project/assets/113332304/616fe301-be07-4bc1-961e-f4b4464e294a)
+![emu8086_rz68okf92d](https://github.com/Berkantagur/CEN212-Microprocessors-Project/assets/113332304/9656bab1-722c-4fe4-ad37-b5eb95dcfb67)
+![emu8086_fNzSCH8xDM](https://github.com/Berkantagur/CEN212-Microprocessors-Project/assets/113332304/f0d3af14-35d6-47a7-ba5b-29ae08077740)
 
 </details>
 <details>
