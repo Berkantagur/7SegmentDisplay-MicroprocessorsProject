@@ -6,7 +6,7 @@ This project aims to create a digital clock using a 7 segment display. When the 
 
 In addition, an alarm function will be integrated into the project. This alarm function will enable the alarm to sound at the time specified by the user and the user will be able to enable or disable the alarm at any time.
 
-This project aims to provide a basic digital watch structure as well as an enhanced watch experience with a user-friendly interface and additional functions. It also aims to simulate the real life functions of digital clocks in a virtual environment by using microprocessor and 7 segment display.
+This project aims to provide a basic digital clock structure as well as an enhanced watch experience with a user-friendly interface and additional functions. It also aims to simulate the real life functions of digital clocks in a virtual environment by using microprocessor and 7 segment display.
 
 **Note:** *The programme is written in assembly code and the code is planned to run only on 8086.*
 </p>
@@ -283,6 +283,7 @@ CODE ENDS
 END START
 ```
 ![7SegmentDisplay](https://github.com/Berkantagur/CEN212-Microprocessors-Project/assets/113332304/2b30e7da-94a8-4619-91cd-b0ce1e9f3a1d)
+![undefined - Imgur](https://github.com/Berkantagur/CEN212-Microprocessors-Project/assets/113332304/e4f610da-4305-4d06-a1e4-6673bf3a51f4)
 
 The visual clock in our code is given above. Initially starting from zero, the indicator is continuously updated. 
 
